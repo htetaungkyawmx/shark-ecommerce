@@ -1,10 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" th:replace="~{layout/layout :: layout (~{::#main})}">
 
+<body>
+    <main id="main">
+        <div class="container-fluid bg-primary login-bloc">
+            <div class="row vh-100 justify-content-center align-items-center">
+                <div class="col-md-4">
+                    <div class="form-wrap p-5 rounded-3">
+                        <h1 class="fs-1 fw-bold text-white text-center">
+                            Register
+                        </h1>
+
+                        <form
+                                class="mb-4"
+                                th:action="@{/register/create}"
+                                method="POST"
+                                enctype="multipart/form-data"
+                                th:object="${userCustomerDTO}"
+                        >
+                            <div class="input-group mb-3">
+                                <input
+                                        type="text"
+                                        class="form-control login__input"
+                                        id="exampleFormControlInput"
+                                        placeholder="User Name"
+                                        th:field="*{name}"
+                                />
+                                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                                     class="text-danger"></div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input
+                                        type="email"
+                                        class="form-control login__input"
+                                        id="exampleFormControlInput1"
+                                        placeholder="name@example.com"
+                                        th:field="*{email}"
+                                />
+                                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                                     class="text-danger"></div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input
+                                        type="password"
+                                        class="form-control login__input"
+                                        id="inputPassword5"
+                                        placeholder="Password"
+                                        th:field="*{password}"
+                                />
+                                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                                     class="text-danger"></div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input
+                                        type="password"
+                                        class="form-control login__input"
+                                        id="inputPassword6"
+                                        placeholder="Confirm Password"
+                                        th:field="*{confirmPassword}"
+                                />
+                                <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
+                                     class="text-danger"></div>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="flexCheckDefault"
+                                />
+                                <label
+                                        class="form-check-label"
+                                        for="flexCheckDefault"
+                                >
+                                    Accept Term & Condition
+                                </label>
+                            </div>
+                            <input type="submit" class="btn btn-success btn-lg text-center w-100" />
+                        </form>
+
+                        <div class="link">
+                            <a class="text-decoration-none" th:href="@{/login}">Already Have Acc ?</a>
+                        </div>
+
+                        <div class="or text-center text-white fw-bold mb-4">
+                            Or
+                        </div>
+
+                        <div class="social-icon d-flex justify-content-around">
+                            <a href="" class="google-icon"
+                            ><img src="../img/google.svg" alt="This is icon"
+                            /></a>
+                            <a href="" class="google-icon"
+                            ><img
+                                    src="../img/facebook.svg"
+                                    alt="This is icon"
+                            /></a>
+                            <a href="" class="google-icon"
+                            ><img
+                                    src="../img/instagram.svg"
+                                    alt="This is icon"
+                            /></a>
+                            <a href="" class="google-icon"
+                            ><img
+                                    src="../img/twitter.svg"
+                                    alt="This is icon"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

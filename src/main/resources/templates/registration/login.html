@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" th:replace="~{layout/layout :: layout (~{::#main})}">
 <body>
+    <main id="main">
+        <div class="container-fluid bg-primary login-bloc">
+            <div class="row vh-100 justify-content-center align-items-center">
+                <div class="col-md-4">
+                    <div class="form-wrap p-5 rounded-3">
+                        <h1 class="fs-1 fw-bold text-white text-center">
+                            Log in
+                        </h1>
 
+                        <form
+                                class="mb-4"
+                                action=""
+                                method="POST"
+                                enctype="multipart/form-data"
+                        >
+                            <div class="input-group mb-3">
+                                <input
+                                        type="email"
+                                        class="form-control login__input"
+                                        id="exampleFormControlInput1"
+                                        placeholder="name@example.com"
+                                />
+                            </div>
+                            <div class="input-group mb-3">
+                                <input
+                                        type="password"
+                                        class="form-control login__input"
+                                        id="inputPassword6"
+                                        placeholder="Password"
+                                />
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="flexCheckDefault"
+                                />
+                                <label
+                                        class="form-check-label"
+                                        for="flexCheckDefault"
+                                >
+                                    Remember Me
+                                </label>
+                            </div>
+                            <a href="" class="btn btn-success btn-lg text-center w-100">Submit</a>
+                        </form>
+
+                        <div class="link">
+                            <a class="text-decoration-none " th:href="@{/register}">Create Acc ?</a>
+                        </div>
+
+                        <div class="or text-center text-white fw-bold mb-4">
+                            Or
+                        </div>
+
+                        <div class="social-icon d-flex justify-content-around">
+                            <a href="" class="google-icon"><img th:src="@{../img/google.svg}" alt="This is icon"></a>
+
+                            <a href="" class="google-icon"><img th:src="@{../img/facebook.svg}" alt="This is icon"></a>
+                            <a href="" class="google-icon"><img th:src="@{../img/instagram.svg}" alt="This is icon"></a>
+                            <a href="" class="google-icon"><img th:src="@{../img/twitter.svg}" alt="This is icon"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
