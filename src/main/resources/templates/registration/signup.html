@@ -25,6 +25,7 @@
                                         id="exampleFormControlInput"
                                         placeholder="User Name"
                                         th:field="*{name}"
+                                        required
                                 />
                                 <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
                                      class="text-danger"></div>
@@ -37,6 +38,8 @@
                                         id="exampleFormControlInput1"
                                         placeholder="name@example.com"
                                         th:field="*{email}"
+                                        required
+
                                 />
                                 <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
                                      class="text-danger"></div>
@@ -48,6 +51,8 @@
                                         id="inputPassword5"
                                         placeholder="Password"
                                         th:field="*{password}"
+                                        required
+
                                 />
                                 <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
                                      class="text-danger"></div>
@@ -59,6 +64,8 @@
                                         id="inputPassword6"
                                         placeholder="Confirm Password"
                                         th:field="*{confirmPassword}"
+                                        required
+
                                 />
                                 <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"
                                      class="text-danger"></div>

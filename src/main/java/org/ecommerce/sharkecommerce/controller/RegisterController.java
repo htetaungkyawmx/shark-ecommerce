@@ -25,7 +25,7 @@ public class RegisterController {
     }
 
     @PostMapping("/register/create")
-    public String createAcc(@Valid CustomerDTO customerDTO, BindingResult bindResult, RedirectAttributes redirectAttributes){
+    public String createAcc(@Valid CustomerDTO customerDTO, BindingResult bindResult, RedirectAttributes redirectAttributes) {
 
         if (bindResult.hasErrors() || !customerDTO.getPassword().equals(customerDTO.getConfirmPassword())) {
             return "registration/signup";
