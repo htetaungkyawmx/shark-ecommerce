@@ -5,4 +5,6 @@ import org.ecommerce.sharkecommerce.model.Customer;
 
 public interface CustomerService {
     public Customer create(CustomerDTO customerDTO);
+
+    public Customer checkEmail(String email);
 }

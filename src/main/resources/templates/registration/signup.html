@@ -11,6 +11,13 @@
                             Register
                         </h1>
 
+                        <div th:if="${session.loggedInCustomer != null}" class="alert alert-danger my-3" role="alert">
+                            <span th:text="${session.loggedInCustomer.email}"></span> already exists.
+                        </div>
+                        <div th:if="${session.wrongPassword != null}" class="alert alert-danger my-3" role="alert">
+                            Password are not same !
+                        </div>
+
                         <form
                                 class="mb-4"
                                 th:action="@{/register/create}"
@@ -18,6 +25,7 @@
                                 enctype="multipart/form-data"
                                 th:object="${userCustomerDTO}"
                         >
+
                             <div class="input-group mb-3">
                                 <input
                                         type="text"

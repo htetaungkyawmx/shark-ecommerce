@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" th:fragment="layout (content)" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head.html :: head">
+<head th:replace="~{fragments/head.html :: head}"></head>
 </head>
 <body>
-    <header th:replace="fragments/header.html :: header"></header>
+<header th:replace="~{fragments/header.html :: header}"></header>
     <main th:replace="${content}"></main>
 
     <script
@@ -11,6 +11,6 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
     ></script>
-
+    <script th:src="@{/js/main.js}"></script>
 </body>
 </html>

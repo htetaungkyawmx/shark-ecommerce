@@ -3,11 +3,13 @@ spring:
     url: jdbc:sqlserver://localhost:1433;databaseName=storedb;encrypt=true;trustServerCertificate=true;
     username: sa
     password: asdf
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+
     properties:
       hibernate:
         dialect: org.hibernate.dialect.SQLServer2012Dialect
         format_sql: true
+
