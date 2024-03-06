@@ -1,4 +1,4 @@
 //package org.ecommerce.sharkecommerce.service.impl;
 //
-//public class OrderServiceImpl {
+//public class SellerServiceImpl {
 //}

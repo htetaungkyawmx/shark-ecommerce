@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="layout/layout :: layout (~{:: #main})">
+<body>
+<main id="main">
+<div class="container mt-5 jumbotron">
+    <form action="#" th:action="@{/category/create}" method="post" th:object="${category}">
+
+        <div class="form-group row">
+            <label for="name" class="col-md-2">Categroy Name</label>
+            <div class="col-md-6">
+                <input type="text" id="name" th:field="*{categoryName}"
+                       class="form-control" />
+            </div>
+            <div th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"
+                 class="text-danger"></div>
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+</main>
+</body>
+</html>

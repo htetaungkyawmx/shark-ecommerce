@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:sqlserver://localhost:1433;databaseName=storedb;encrypt=true;trustServerCertificate=true;
     username: sa
-    password: asdf
+    password: root
   jpa:
     show-sql: true
     hibernate:

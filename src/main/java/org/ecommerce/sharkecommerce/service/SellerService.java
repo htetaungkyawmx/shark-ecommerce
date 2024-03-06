@@ -1,4 +1,5 @@
 //package org.ecommerce.sharkecommerce.service;
 //
-//public interface OrderService {
+//public interface SellerService {
+//
 //}

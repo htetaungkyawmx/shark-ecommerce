@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="layout/layout :: layout (~{:: #main})">
+<link rel="stylesheet" th:href="@{../css/ams.css}" />>
+<body>
+<main id="main">
+   <div class="container">
+       <div class="row">
+           <div class="">
+               <h1 class="">Products</h1>
+               <div class="sidebar">
+                   <h2>SHARK</h2>
+                   <ul>
+                       <li><a href="customer.html"><i class="fa fa-address-book" aria-hidden="true"></i>Customer</a></li>
+                       <li><a href="category.html"><i class="fa fa-folder" aria-hidden="true"></i>Category</a></li>
+                       <li><a href="product.html"><i class="fa fa-user" aria-hidden="true"></i>Product</a></li>
+                       <li><a href="order.html"><i class="fa fa-user-circle" aria-hidden="true"></i>Order</a></li>
+                       <li><a href="login.html"><i class="fa fa-reply" aria-hidden="true"></i>Log Out</a></li>
+                   </ul>
+               </div>
+               <a class="" href="/product/show">Create Product</a>
+               <table class="table">
+                   <thead>
+                   <tr>
+                       <th>ID</th>
+                       <th>Name</th>
+                       <th>Image</th>
+                       <th>Brand</th>
+                       <th>Price</th>
+                       <th>Quantity</th>
+                       <th>Description</th>
+                       <th>Action</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr th:each="product:${product}">
+                       <td th:text="${index.count}"></td>
+                       <td th:text="${product.productName}"></td>
+                       <td>
+                           <img class="product-image" th:src="@{'images/'+${product.productImage}}" alt="Product Image" width="100">
+                       </td>
+                       <td th:text="${product.brand}"></td>
+                       <td th:text="${product.price}"></td>
+                       <td th:text="${product.quantity}"></td>
+                       <td th:text="${product.description}"></td>
+                       <td style="white-space:nowrap">
+                           <a class="btn btn-primary btn-sm"
+                              th:href="@{/product/edit/{id}(id=${product.id})}">Edit</a>
+
+                           <a th:href="@{/product/delete/{id}(id=${product.id})}"
+                              class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                       </td>
+                   </tr>
+                   </tbody>
+               </table>
+           </div>
+       </div>
+   </div>
+
+</main>
+</body>
+</html>
